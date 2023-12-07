@@ -1,5 +1,6 @@
 ﻿using System;
 using tabuleiro;
+using xadrez_console.tabuleiro;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -7,11 +8,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Posicao P;
+            Tabuleiro tab = new Tabuleiro(8, 8);
 
-            P = new Posicao(3, 4);
 
-            Console.WriteLine("Posição: "+ P);
 
         }
     }
