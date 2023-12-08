@@ -12,16 +12,24 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
 
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(1, 5));
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(2, 5));
-                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(2, 6));
+                    partida.executaMovimento(origem, destino);
+                }
 
-                Tela.imprimirTabuleiro(tab);
+                
+
+                Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
