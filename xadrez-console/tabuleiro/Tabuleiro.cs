@@ -55,7 +55,7 @@ namespace xadrez_console.tabuleiro
             return aux;
         }
 
-        public bool posicaoValid(Posicao pos)
+        public bool posicaoValida(Posicao pos)
         {
             if(pos.linha < 0 || pos.linha >= linhas || pos.coluna <0 || pos.coluna >= colunas) return false;
             return true;
@@ -63,7 +63,7 @@ namespace xadrez_console.tabuleiro
 
         public void validarPosicao(Posicao pos)
         {
-            if (!posicaoValid(pos))
+            if (!posicaoValida(pos))
             {
                 throw new TabuleiroException("Posição Inválida!");
             }
