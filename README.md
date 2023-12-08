@@ -21,11 +21,10 @@ Special Moves: Includes special chess moves such as castling and en passant.
 ## Running the Game
 Clone the repository to your local machine.
 
-bash
-Copy code
+```
 git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/marlononion/xadrez-console.git)
 Navigate to the project directory.
-
+```
 bash
 Copy code
 cd xadrez-console
