@@ -6,9 +6,11 @@ namespace xadrez
     internal class Peao : Peca
     {
 
-        public Peao(Tabuleiro tab, Cor cor) : base(tab, cor)
-        {
+        private PartidaDeXadrez partida;
 
+        public Peao(Tabuleiro tab, Cor cor, PartidaDeXadrez partida) : base(tab, cor)
+        {
+            this.partida = partida;
         }
 
         public override string ToString()
@@ -62,6 +64,23 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
 
+                // Jogada Especial En Passant
+
+                if (posicao.linha == 3)
+                {
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tabuleiro.posicaoValida(esquerda) && existeInimigo(esquerda) && tabuleiro.peca(esquerda) == partida.vulneravelEnPassant)
+                    {
+                        mat[esquerda.linha - 1, esquerda.coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tabuleiro.posicaoValida(direita) && existeInimigo(direita) && tabuleiro.peca(direita) == partida.vulneravelEnPassant)
+                    {
+                        mat[direita.linha - 1, direita.coluna] = true;
+                    }
+                }
+
 
             }
             else
@@ -86,6 +105,22 @@ namespace xadrez
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
+
+                if (posicao.linha == 4)
+                {
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tabuleiro.posicaoValida(esquerda) && existeInimigo(esquerda) && tabuleiro.peca(esquerda) == partida.vulneravelEnPassant)
+                    {
+                        mat[esquerda.linha + 1, esquerda.coluna] = true;
+                    }
+
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna - 1);
+                    if (tabuleiro.posicaoValida(direita) && existeInimigo(direita) && tabuleiro.peca(direita) == partida.vulneravelEnPassant)
+                    {
+                        mat[direita.linha + 1, direita.coluna] = true;
+                    }
+                }
+
             }
 
             return mat;

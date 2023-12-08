@@ -1,5 +1,7 @@
 ﻿using tabuleiro;
 using xadrez_console.tabuleiro;
+using System.Text;
+using System;
 
 namespace xadrez
 {
