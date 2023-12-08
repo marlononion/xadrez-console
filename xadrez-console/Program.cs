@@ -4,6 +4,7 @@ using xadrez;
 using xadrez_console;
 using xadrez_console.tabuleiro;
 
+
 namespace MyApp // Note: actual namespace depends on the project name.
 {
     class Program
@@ -20,6 +21,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     {
                         Console.Clear();
                         Tela.imprimirPartida(partida);
+
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
@@ -48,14 +50,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     }
                 }
 
-                
 
+                Console.Clear();
                 Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
+
+            Console.ReadLine();
         }
     }
 }
