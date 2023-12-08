@@ -23,17 +23,22 @@ Clone the repository to your local machine.
 
 ```
 git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/marlononion/xadrez-console.git)
-Navigate to the project directory.
 ```
 
-bash
-Copy code
-cd xadrez-console
-Build and run the application.
+Navigate to the project directory.
 
-bash
-Copy code
+
+```
+cd xadrez-console
+```
+```
+Build and run the application.
+```
+
+```
 dotnet run
+```
+
 Follow the on-screen instructions to play the game.
 
 # How to Play
