@@ -25,6 +25,7 @@ Clone the repository to your local machine.
 git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/marlononion/xadrez-console.git)
 Navigate to the project directory.
 ```
+
 bash
 Copy code
 cd xadrez-console
